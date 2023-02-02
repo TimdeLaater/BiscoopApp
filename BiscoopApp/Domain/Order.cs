@@ -26,31 +26,51 @@ namespace BiscoopApp.Domain
         }
         public double CalculatePrice()
         {
-            double premiumExtra = 0;
+            // 1
+            double premiumExtra = CheckPremiumAmount();
+            bool weekend = CheckIfWeekend();
 
-            if (Ticket!.IsPremiumTicket())
+            // A
+            // Check conditions of order
+            if (!weekend || IsStudentOrder)
             {
-                if (IsStudentOrder)
-                    premiumExtra = 2;
-                else
-                    premiumExtra = 3;
-            }
-
-            bool weekend = this.Ticket.MovieScreening.DateAndTime.DayOfWeek == DayOfWeek.Sunday || this.Ticket.MovieScreening.DateAndTime.DayOfWeek == DayOfWeek.Saturday || this.Ticket.MovieScreening.DateAndTime.DayOfWeek == DayOfWeek.Friday;
-
-            if (weekend && IsStudentOrder)
-            {
+                // 2
                 int Count = 0;
+
+                // 3
+                // Check every second ticket ordered
                 while (OrderNr % 2 == 0 && OrderNr != 0)
                 {
                     Count++;
                     OrderNr = OrderNr - 2;
                 }
-                return (Count + OrderNr) * (Ticket.GetPrice() + premiumExtra);
+                //4 
+                // Calculate amount
+                return (Count + OrderNr) * (Ticket!.GetPrice() + premiumExtra);
             }
+            // B
             if (weekend && !IsStudentOrder && OrderNr >= 6)
-                return (OrderNr) * (Ticket.GetPrice() + premiumExtra) * 0.9;
-            return (OrderNr) * (Ticket.GetPrice() + premiumExtra);
+                // 5
+                return (OrderNr) * (Ticket!.GetPrice() + premiumExtra) * 0.9;
+            // 6
+            return (OrderNr) * (Ticket!.GetPrice() + premiumExtra);
+        }
+
+        public bool CheckIfWeekend()
+        {
+            return Ticket!.MovieScreening.DateAndTime.DayOfWeek == DayOfWeek.Sunday || this.Ticket.MovieScreening.DateAndTime.DayOfWeek == DayOfWeek.Saturday || this.Ticket.MovieScreening.DateAndTime.DayOfWeek == DayOfWeek.Friday;
+        }
+        private double CheckPremiumAmount()
+        {
+            if (Ticket!.IsPremiumTicket())
+            {
+                // Check amount added if is student order
+                if (IsStudentOrder)
+                    return 2;
+                else
+                    return 3;
+            }
+            return 0;
         }
 
         public void Export(TicketExportFormat exportFormat)
