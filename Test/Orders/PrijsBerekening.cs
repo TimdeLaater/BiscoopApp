@@ -193,7 +193,7 @@ namespace Test.Orders
             Assert.Equal(36, sut);
         }
         [Fact]
-        public void Order_niet_student_wel_weekend_meer_dan_6_kaartjes_wel_premium()
+        public void Order_geen_student_wel_weekend_meer_dan_6_kaartjes_wel_premium()
         {
             // Arrange
             Movie movie = new Movie("Revenge of the Sith");
@@ -209,23 +209,7 @@ namespace Test.Orders
             Assert.Equal(70.2, sut);
         }
         [Fact]
-        public void Order_niet_student_wel_weekend_meer_dan_6_kaartjes_niet_premium()
-        {
-            // Arrange
-            Movie movie = new Movie("Revenge of the Sith");
-            MovieScreening movieScreening1 = new MovieScreening(movie, new DateTime(2023, 2, 4), 10);
-            movie.AddScreening(movieScreening1);
-            Order order = new Order(6, false);
-            order.AddSeatReservation(new MovieTicket(movieScreening1, 1, 1, false));
-
-            // Act
-            var sut = order.CalculatePrice();
-
-            // Assert
-            Assert.Equal(54, sut);
-        }
-        [Fact]
-        public void Order_niet_student_wel_weekend_minder_dan_6_kaartjes_niet_premium()
+        public void Order_geen_student_wel_weekend_minder_dan_6_kaartjes_niet_premium()
         {
             // Arrange
             Movie movie = new Movie("Revenge of the Sith");
@@ -242,7 +226,7 @@ namespace Test.Orders
         }
 
         [Fact]
-        public void Order_niet_student_wel_weekend_minder_dan_6_kaartjes_wel_premium()
+        public void Order_geen_student_wel_weekend_minder_dan_6_kaartjes_wel_premium()
         {
             // Arrange
             Movie movie = new Movie("Revenge of the Sith");
