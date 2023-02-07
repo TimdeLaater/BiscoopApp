@@ -2,9 +2,9 @@ name: Qodana Quality Check
 
 on:
   push:
-    branches: [ "development" ]
+    branches: [ "Dev" ]
   pull_request:
-    branches: [ "development" ]
+    branches: [ "Dev" ]
 
 jobs:
 
