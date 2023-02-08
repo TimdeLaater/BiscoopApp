@@ -11,6 +11,7 @@ namespace BiscoopApp.Domain
         private int RowNr;
         private int SeatNr;
         private bool IsPremium;
+        private bool isStudentOrder;
         public MovieScreening MovieScreening { get; }
 
         public MovieTicket(MovieScreening movieScreening, int rowNr, int seatNr, bool isPremiumReservation)
