@@ -8,9 +8,9 @@
         {
             Title = title;
         }
-        public void AddScreening(MovieScreening screening)
+        public static void AddScreening(MovieScreening screening)
         {
-            throw new NotImplementedException();
+            if (screening == null) throw new ArgumentNullException(nameof(screening));
         }
 
         public override string ToString()

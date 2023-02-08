@@ -10,7 +10,7 @@ namespace Test.Orders
             // Arrange
             var movie = new Movie("Revenge of the Sith");
             var movieScreening1 = new MovieScreening(movie, new DateTime(2023, 2, 2), 10);
-            movie.AddScreening(movieScreening1);
+            Movie.AddScreening(movieScreening1);
             var order = new Order(1, true);
             order.AddSeatReservation(new MovieTicket(movieScreening1, 1, 1, false));
 
@@ -26,7 +26,7 @@ namespace Test.Orders
             // Arrange
             var movie = new Movie("Revenge of the Sith");
             var movieScreening1 = new MovieScreening(movie, new DateTime(2023, 2, 2), 10);
-            movie.AddScreening(movieScreening1);
+            Movie.AddScreening(movieScreening1);
             var order = new Order(1, true);
             order.AddSeatReservation(new MovieTicket(movieScreening1, 1, 1, true));
 
@@ -41,7 +41,7 @@ namespace Test.Orders
             // Arrange
             var movie = new Movie("Revenge of the Sith");
             var movieScreening1 = new MovieScreening(movie, new DateTime(2023, 2, 2), 10);
-            movie.AddScreening(movieScreening1);
+            Movie.AddScreening(movieScreening1);
             var order = new Order(1, false);
             order.AddSeatReservation(new MovieTicket(movieScreening1, 1, 1, true));
 
@@ -57,7 +57,7 @@ namespace Test.Orders
             // Arrange
             var movie = new Movie("Revenge of the Sith");
             var movieScreening1 = new MovieScreening(movie, new DateTime(2023, 2, 2), 10);
-            movie.AddScreening(movieScreening1); 
+            Movie.AddScreening(movieScreening1); 
             var order = new Order(1, false);
             order.AddSeatReservation(new MovieTicket(movieScreening1, 1, 1, true));
 
@@ -73,7 +73,7 @@ namespace Test.Orders
             // Arrange
             var movie = new Movie("Revenge of the Sith");
             var movieScreening1 = new MovieScreening(movie, new DateTime(2023, 2, 2), 10);
-            movie.AddScreening(movieScreening1);
+            Movie.AddScreening(movieScreening1);
             var order = new Order(6, true);
             order.AddSeatReservation(new MovieTicket(movieScreening1, 1, 1, false));
 
@@ -89,7 +89,7 @@ namespace Test.Orders
             // Arrange
             var movie = new Movie("Revenge of the Sith");
             var movieScreening1 = new MovieScreening(movie, new DateTime(2023, 2, 2), 10);
-            movie.AddScreening(movieScreening1);
+            Movie.AddScreening(movieScreening1);
             var order = new Order(6, true);
             order.AddSeatReservation(new MovieTicket(movieScreening1, 1, 1, true));
 
@@ -105,7 +105,7 @@ namespace Test.Orders
             // Arrange
             var movie = new Movie("Revenge of the Sith");
             var movieScreening1 = new MovieScreening(movie, new DateTime(2023, 2, 2), 10);
-            movie.AddScreening(movieScreening1);
+            Movie.AddScreening(movieScreening1);
             var order = new Order(6, false);
             order.AddSeatReservation(new MovieTicket(movieScreening1, 1, 1, false));
 
@@ -121,7 +121,7 @@ namespace Test.Orders
             // Arrange
             var movie = new Movie("Revenge of the Sith");
             var movieScreening1 = new MovieScreening(movie, new DateTime(2023, 2, 2), 10);
-            movie.AddScreening(movieScreening1);
+            Movie.AddScreening(movieScreening1);
             var order = new Order(6, false);
             order.AddSeatReservation(new MovieTicket(movieScreening1, 1, 1, true));
 
@@ -138,7 +138,7 @@ namespace Test.Orders
             // Arrange
             var movie = new Movie("Revenge of the Sith");
             var movieScreening1 = new MovieScreening(movie, new DateTime(2023, 2, 4), 10);
-            movie.AddScreening(movieScreening1);
+            Movie.AddScreening(movieScreening1);
             var order = new Order(6, false);
             order.AddSeatReservation(new MovieTicket(movieScreening1, 1, 1, false));
 
@@ -154,7 +154,7 @@ namespace Test.Orders
             // Arrange
             var movie = new Movie("Revenge of the Sith");
             var movieScreening1 = new MovieScreening(movie, new DateTime(2023, 2, 4), 10);
-            movie.AddScreening(movieScreening1);
+            Movie.AddScreening(movieScreening1);
             var order = new Order(1, false);
             order.AddSeatReservation(new MovieTicket(movieScreening1, 1, 1, false));
 
@@ -170,7 +170,7 @@ namespace Test.Orders
             // Arrange
             var movie = new Movie("Revenge of the Sith");
             var movieScreening1 = new MovieScreening(movie, new DateTime(2023, 2, 4), 10);
-            movie.AddScreening(movieScreening1);
+            Movie.AddScreening(movieScreening1);
             var order = new Order(6, true);
             order.AddSeatReservation(new MovieTicket(movieScreening1, 1, 1, false));
 
@@ -186,7 +186,7 @@ namespace Test.Orders
             // Arrange
             var movie = new Movie("Revenge of the Sith");
             var movieScreening1 = new MovieScreening(movie, new DateTime(2023, 2, 4), 10);
-            movie.AddScreening(movieScreening1);
+            Movie.AddScreening(movieScreening1);
             var order = new Order(6, true);
             order.AddSeatReservation(new MovieTicket(movieScreening1, 1, 1, true));
 
@@ -202,7 +202,7 @@ namespace Test.Orders
             // Arrange
             var movie = new Movie("Revenge of the Sith");
             var movieScreening1 = new MovieScreening(movie, new DateTime(2023, 2, 4), 10);
-            movie.AddScreening(movieScreening1);
+            Movie.AddScreening(movieScreening1);
             var order = new Order(6, false);
             order.AddSeatReservation(new MovieTicket(movieScreening1, 1, 1, true));
 
@@ -218,7 +218,7 @@ namespace Test.Orders
             // Arrange
             var movie = new Movie("Revenge of the Sith");
             var movieScreening1 = new MovieScreening(movie, new DateTime(2023, 2, 4), 10);
-            movie.AddScreening(movieScreening1);
+            Movie.AddScreening(movieScreening1);
             var order = new Order(1, false);
             order.AddSeatReservation(new MovieTicket(movieScreening1, 1, 1, false));
 
@@ -235,7 +235,7 @@ namespace Test.Orders
             // Arrange
             var movie = new Movie("Revenge of the Sith");
             var movieScreening1 = new MovieScreening(movie, new DateTime(2023, 2, 4), 10);
-            movie.AddScreening(movieScreening1);
+            Movie.AddScreening(movieScreening1);
             var order = new Order(1, false);
             order.AddSeatReservation(new MovieTicket(movieScreening1, 1, 1, true));
 
