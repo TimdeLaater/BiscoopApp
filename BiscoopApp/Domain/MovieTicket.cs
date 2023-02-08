@@ -2,16 +2,12 @@
 
 public class MovieTicket
 {
-    public int RowNr;
-    public int SeatNr;
     public bool IsPremium { get; }
     public MovieScreening MovieScreening { get; }
 
-    public MovieTicket(MovieScreening movieScreening, int rowNr, int seatNr, bool isPremiumReservation)
+    public MovieTicket(MovieScreening movieScreening, bool isPremiumReservation)
     {
         MovieScreening = movieScreening;
-        RowNr = rowNr;
-        SeatNr = seatNr;
         IsPremium = isPremiumReservation;
     }
     public bool IsPremiumTicket()
