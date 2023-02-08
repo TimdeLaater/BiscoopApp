@@ -1,8 +1,7 @@
-﻿namespace BiscoopApp.Domain
+﻿namespace BiscoopApp.Domain;
+
+public enum TicketExportFormat
 {
-    public enum TicketExportFormat
-    {
-        Json,
-        PlainText
-    }
+    Json,
+    PlainText
 }

@@ -1,21 +1,20 @@
-﻿namespace BiscoopApp.Domain
+﻿namespace BiscoopApp.Domain;
+
+public class Movie
 {
-    public class Movie
+    public string Title { get; }
+
+    public Movie(string title)
     {
-        public string Title { get; }
+        Title = title;
+    }
+    public static void AddScreening(MovieScreening screening)
+    {
+        if (screening == null) throw new ArgumentNullException(nameof(screening));
+    }
 
-        public Movie(string title)
-        {
-            Title = title;
-        }
-        public static void AddScreening(MovieScreening screening)
-        {
-            if (screening == null) throw new ArgumentNullException(nameof(screening));
-        }
-
-        public override string ToString()
-        {
-            return Title;
-        }
+    public override string ToString()
+    {
+        return Title;
     }
 }

@@ -1,7 +1,6 @@
-﻿namespace BiscoopApp.Interfaces
+﻿namespace BiscoopApp.Interfaces;
+
+public interface ICalculate
 {
-    public interface ICalculate
-    {
-        public double Calculate(int orderNr);
-    }
+    public double Calculate(int orderNr);
 }
