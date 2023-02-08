@@ -1,4 +1,7 @@
-﻿using System;
+﻿using BiscoopApp.Domain.Calculate;
+using BiscoopApp.Domain.Export;
+using BiscoopApp.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,7 +15,9 @@ namespace BiscoopApp.Domain
         private int Id { get; set; }
         private int OrderNr { get; set; }
         private bool IsStudentOrder { get; set; }
-        private MovieTicket? Ticket { get; set; }
+        private MovieTicket Ticket { get; set; }
+        private ICalculate Calculate { get; set; }
+        private IExport Export { get; set; }
 
         public Order(int orderNr, bool isStudentOrder)
         {
@@ -21,104 +26,36 @@ namespace BiscoopApp.Domain
         }
         public void AddSeatReservation(MovieTicket ticket)
         {
-            this.Ticket = ticket;
-            this.Ticket.MovieScreening.TicketsOrdered.Add(Ticket);
+            Ticket = ticket;
+            Ticket.MovieScreening.TicketsOrdered.Add(Ticket);
         }
         public double CalculatePrice()
         {
-            // 1
-            double premiumExtra = CheckPremiumAmount();
-            bool weekend = CheckIfWeekend();
-
-            // A
-            // Check conditions of order
-            if (!weekend || IsStudentOrder)
-            {
-                // 2
-                int Count = 0;
-
-                // 3
-                // Check every second ticket ordered
-                while (OrderNr % 2 == 0 && OrderNr != 0)
-                {
-                    Count++;
-                    OrderNr = OrderNr - 2;
-                }
-                //4 
-                // Calculate amount
-                return (Count + OrderNr) * (Ticket!.GetPrice() + premiumExtra);
-            }
-            // B
-            if (weekend && !IsStudentOrder && OrderNr >= 6)
-                // 5
-                return (OrderNr) * (Ticket!.GetPrice() + premiumExtra) * 0.9;
-            // 6
-            return (OrderNr) * (Ticket!.GetPrice() + premiumExtra);
-        }
-
-        public bool CheckIfWeekend()
-        {
-            return Ticket!.MovieScreening.DateAndTime.DayOfWeek == DayOfWeek.Sunday || this.Ticket.MovieScreening.DateAndTime.DayOfWeek == DayOfWeek.Saturday || this.Ticket.MovieScreening.DateAndTime.DayOfWeek == DayOfWeek.Friday;
-        }
-        private double CheckPremiumAmount()
-        {
-            if (Ticket!.IsPremiumTicket())
-            {
-                // Check amount added if is student order
-                if (IsStudentOrder)
-                    return 2;
-                else
-                    return 3;
-            }
-            return 0;
-        }
-
-        public void Export(TicketExportFormat exportFormat)
-        {
-            DirectoryInfo di = new DirectoryInfo("../../../");
-            string pathString = di.FullName + "Orders";
-
-            string fileName = this.OrderNr.ToString() + ".txt";
-            pathString = System.IO.Path.Combine(pathString, fileName);
-
-            // Verify the path that you have constructed.
-            Console.WriteLine("Path to my file: {0}\n", pathString);
-
-            //Get the 
-            string exportData = "Ordernummer: " + this.OrderNr.ToString() + "Prijs: €" + CalculatePrice().ToString() + "/n";
-            byte[] bytes = Encoding.UTF8.GetBytes(exportData);
-
-            if (!System.IO.File.Exists(pathString))
-            {
-                using (System.IO.FileStream fs = System.IO.File.Create(pathString))
-                {
-
-                    for (int i = 0; i < bytes.Length; i++)
-                    {
-                        fs.WriteByte(bytes[i]);
-                    }
-                }
-            }
+            if (IsStudentOrder)
+                Calculate = new CalculateStudent(Ticket!);
             else
-            {
-                Console.WriteLine("File \"{0}\" already exists.", fileName);
-                return;
-            }
+                Calculate = new CalculateNonStudent(Ticket!);
+           return  Calculate.Calculate(OrderNr);
+        }
 
-            // Read and display the data from your file.
-            try
-            {
-                byte[] readBuffer = System.IO.File.ReadAllBytes(pathString);
-                foreach (byte b in readBuffer)
-                {
-                    Console.Write(b + " ");
-                }
-                Console.WriteLine();
+        public void ExportTicket(TicketExportFormat exportFormat)
+        {
+            switch (exportFormat) {
+                case TicketExportFormat.JSON:
+                    Export = new ExportJSON();
+                    break;
+                case TicketExportFormat.PLAINTEXT:
+                    Export = new ExportPlainText();
+                    break;
+
             }
-            catch (System.IO.IOException e)
+            var data = new List<KeyValuePair<string, dynamic>>()
             {
-                Console.WriteLine(e.Message);
-            }
+                new KeyValuePair<string, dynamic>("ID", Id),
+                new KeyValuePair<string, dynamic>("Aantal", OrderNr),
+                new KeyValuePair<string, dynamic>("Prijs", CalculatePrice()),
+            };
+            Export.Export(data);  
         }
     }
 }

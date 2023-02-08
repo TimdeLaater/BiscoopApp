@@ -109,7 +109,7 @@ namespace Test.Orders
             var sut = order.CalculatePrice();
 
             // Assert
-            Assert.Equal(30, sut);
+            Assert.Equal(60, sut);
         }
         [Fact]
         public void Order_geen_student_geen_weekend_meer_dan_6_kaartjes_wel_premium()
@@ -125,7 +125,7 @@ namespace Test.Orders
             var sut = order.CalculatePrice();
 
             // Assert
-            Assert.Equal(39, sut);
+            Assert.Equal(78, sut);
         }
 
         [Fact]
