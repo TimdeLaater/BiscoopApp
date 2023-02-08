@@ -80,6 +80,9 @@ jobs:
     # Execute all unit tests in the solution
     - name: Execute unit tests
       run: dotnet test
+      
+    - name: Qodana Scan
+      uses: JetBrains/qodana-action@v2022.3.3
 
     # Restore the application to populate the obj folder with RuntimeIdentifiers
     - name: Restore the application
