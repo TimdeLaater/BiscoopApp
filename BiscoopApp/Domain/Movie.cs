@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BiscoopApp.Domain
+﻿namespace BiscoopApp.Domain
 {
     public class Movie
     {
@@ -16,10 +10,10 @@ namespace BiscoopApp.Domain
         }
         public void AddScreening(MovieScreening screening)
         {
-
+            throw new NotImplementedException();
         }
 
-        public override string? ToString()
+        public override string ToString()
         {
             return Title;
         }

@@ -4,24 +4,24 @@ namespace BiscoopApp.Domain.Calculate
 {
     public class CalculateStudent : ICalculate
     {
-        private MovieTicket MovieTicket { get; set; }
+        private MovieTicket MovieTicket { get; }
         public CalculateStudent(MovieTicket movieTicket)
         {
             MovieTicket = movieTicket;
         }
-        public double Calculate(int OrderNr)
+        public double Calculate(int orderNr)
         {
-            int premiumExtra = 0;
+            var premiumExtra = 0;
             if (MovieTicket.IsPremiumTicket())
                 premiumExtra = 2;
 
-            int Count = 0;
-            while (OrderNr % 2 == 0 && OrderNr != 0)
+            var count = 0;
+            while (orderNr % 2 == 0 && orderNr != 0)
             {
-                Count++;
-                OrderNr = OrderNr - 2;
+                count++;
+                orderNr -= 2;
             }
-            return (Count + OrderNr) * (MovieTicket!.GetPrice() + premiumExtra);
+            return (count + orderNr) * (MovieTicket.GetPrice() + premiumExtra);
         }
     }
 }

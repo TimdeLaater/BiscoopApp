@@ -2,6 +2,6 @@
 {
     public interface ICalculate
     {
-        public double Calculate(int OrderNr);
+        public double Calculate(int orderNr);
     }
 }

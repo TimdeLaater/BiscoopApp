@@ -1,10 +1,4 @@
 ﻿using BiscoopApp.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BiscoopApp.Domain.Export
 {
@@ -12,26 +6,24 @@ namespace BiscoopApp.Domain.Export
     {
         public void Export(List<KeyValuePair<string, dynamic>> exportData)
         {
-            var ID =  exportData.Where(kvp => kvp.Key == "ID").First().Value;
-            var Aantal = exportData.Where(kvp => kvp.Key == "Aantal").First().Value;
-            var Prijs =  exportData.Where(kvp => kvp.Key == "Prijs").First().Value;
+            var id = exportData.First(kvp => kvp.Key == "ID").Value;
+            var aantal = exportData.First(kvp => kvp.Key == "Aantal").Value;
+            var prijs = exportData.First(kvp => kvp.Key == "Prijs").Value;
 
-            string stringData = "Id: " + ID + ". " + Aantal + " tickets." + " Prijs: €" + Prijs;
+            var stringData = "ID: " + id + ". " + aantal + " tickets." + " Prijs: €" + prijs;
 
-            DirectoryInfo di = new DirectoryInfo("../../../");
-            string path = di.FullName + "Orders/PlainText/Orders.txt";
+            var di = new DirectoryInfo("../../../");
+            var path = di.FullName + "Orders/PlainText/Orders.txt";
 
             if (!File.Exists(path))
             {
                 // Create a file to write to.
-                using (StreamWriter sw = File.CreateText(path))
-                {
-                    sw.WriteLine(exportData);
-                }
+                using var sw = File.CreateText(path);
+                sw.WriteLine(stringData);
             }
-            using (StreamWriter sw = File.AppendText(path))
+            using (var sw = File.AppendText(path))
             {
-                sw.WriteLine(exportData);
+                sw.WriteLine(stringData);
             }
         }
     }

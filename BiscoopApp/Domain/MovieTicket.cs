@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BiscoopApp.Domain
+﻿namespace BiscoopApp.Domain
 {
     public class MovieTicket
     {
-        private int RowNr;
-        private int SeatNr;
-        private bool IsPremium;
+        public int RowNr { get; }
+        public int SeatNr { get; }
+        public bool IsPremium { get; }
         public MovieScreening MovieScreening { get; }
 
         public MovieTicket(MovieScreening movieScreening, int rowNr, int seatNr, bool isPremiumReservation)
@@ -27,11 +21,6 @@ namespace BiscoopApp.Domain
         public double GetPrice()
         {
             return MovieScreening.GetPricePerSeat();
-        }
-
-        public override string? ToString()
-        {
-            return base.ToString();
         }
     }
 }

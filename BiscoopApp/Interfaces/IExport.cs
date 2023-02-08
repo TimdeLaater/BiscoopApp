@@ -1,5 +1,4 @@
-﻿using System;
-namespace BiscoopApp.Interfaces
+﻿namespace BiscoopApp.Interfaces
 {
     public interface IExport
     {
