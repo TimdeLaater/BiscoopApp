@@ -39,8 +39,8 @@ public class Order
     {
         Export = exportFormat switch
         {
-            TicketExportFormat.JSON => new ExportJson(),
-            TicketExportFormat.PLAINTEXT => new ExportPlainText(),
+            TicketExportFormat.Json => new ExportJson(),
+            TicketExportFormat.PlainText => new ExportPlainText(),
             _ => Export
         };
 
