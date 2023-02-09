@@ -1,5 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using BiscoopApp.Domain;
+using BioscoopApp.Domain;
 
 Console.WriteLine("Hello, World!");
 var movie1 = new Movie("Revenge of the Sith");

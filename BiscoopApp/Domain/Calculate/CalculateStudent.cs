@@ -1,6 +1,6 @@
-﻿using BiscoopApp.Interfaces;
+﻿using BioscoopApp.Interfaces;
 
-namespace BiscoopApp.Domain.Calculate;
+namespace BioscoopApp.Domain.Calculate;
 
 public class CalculateStudent : ICalculate
 {

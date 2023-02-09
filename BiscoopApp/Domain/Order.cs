@@ -1,8 +1,9 @@
-﻿using BiscoopApp.Domain.Calculate;
-using BiscoopApp.Domain.Export;
-using BiscoopApp.Interfaces;
+﻿using BioscoopApp.Domain;
+using BioscoopApp.Domain.Calculate;
+using BioscoopApp.Domain.Export;
+using BioscoopApp.Interfaces;
 
-namespace BiscoopApp.Domain;
+namespace BioscoopApp.Domain;
 
 public class Order
 {

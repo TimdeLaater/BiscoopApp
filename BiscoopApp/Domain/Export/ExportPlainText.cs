@@ -1,6 +1,6 @@
-﻿using BiscoopApp.Interfaces;
+﻿using BioscoopApp.Interfaces;
 
-namespace BiscoopApp.Domain.Export;
+namespace BioscoopApp.Domain.Export;
 
 public class ExportPlainText : IExport
 {

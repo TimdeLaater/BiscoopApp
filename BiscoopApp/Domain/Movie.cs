@@ -1,4 +1,4 @@
-﻿namespace BiscoopApp.Domain;
+﻿namespace BioscoopApp.Domain;
 
 public class Movie
 {

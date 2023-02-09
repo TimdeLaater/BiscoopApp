@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BiscoopApp", "BiscoopApp\BiscoopApp.csproj", "{B2D2EF90-CEA3-4130-B6C2-31D6E9382CE3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BioscoopApp", "BiscoopApp\BioscoopApp.csproj", "{B2D2EF90-CEA3-4130-B6C2-31D6E9382CE3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{A1CC19D1-4486-4CAB-98EC-25AF76AC5FBC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test", "Test\Test.csproj", "{A1CC19D1-4486-4CAB-98EC-25AF76AC5FBC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

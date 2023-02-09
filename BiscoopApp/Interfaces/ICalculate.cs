@@ -1,4 +1,4 @@
-﻿namespace BiscoopApp.Interfaces;
+﻿namespace BioscoopApp.Interfaces;
 
 public interface ICalculate
 {

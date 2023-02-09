@@ -1,6 +1,7 @@
-﻿using BiscoopApp.Interfaces;
+﻿using BioscoopApp.Domain;
+using BioscoopApp.Interfaces;
 
-namespace BiscoopApp.Domain.Calculate;
+namespace BioscoopApp.Domain.Calculate;
 
 public class CalculateNonStudent : ICalculate
 {
@@ -14,7 +15,7 @@ public class CalculateNonStudent : ICalculate
         var premiumExtra = 0;
         if (MovieTicket.IsPremiumTicket())
             premiumExtra = 3;
-        if(IsWeekend() && orderNr >= 6)
+        if (IsWeekend() && orderNr >= 6)
             return orderNr * (MovieTicket.GetPrice() + premiumExtra) * 0.9;
         return orderNr * (MovieTicket.GetPrice() + premiumExtra);
     }
