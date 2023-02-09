@@ -1,8 +1,8 @@
-﻿using BiscoopApp.Interfaces;
+﻿using BioscoopApp.Interfaces;
 using System.Text.Json.Nodes;
 using System.Text.Json;
 
-namespace BiscoopApp.Domain.Export;
+namespace BioscoopApp.Domain.Export;
 
 public class ExportJson : IExport
 {
