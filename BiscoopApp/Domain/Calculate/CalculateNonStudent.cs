@@ -5,19 +5,19 @@ namespace BioscoopApp.Domain.Calculate;
 
 public class CalculateNonStudent : ICalculate
 {
+    private int PremiumExtra { get; }
     private MovieTicket MovieTicket { get; }
     public CalculateNonStudent(MovieTicket movieTicket)
     {
         MovieTicket = movieTicket;
+        if (MovieTicket.IsPremium)
+            PremiumExtra = 3;
     }
     public double Calculate(int orderNr)
     {
-        var premiumExtra = 0;
-        if (MovieTicket.IsPremiumTicket())
-            premiumExtra = 3;
         if (IsWeekend() && orderNr >= 6)
-            return orderNr * (MovieTicket.GetPrice() + premiumExtra) * 0.9;
-        return orderNr * (MovieTicket.GetPrice() + premiumExtra);
+            return orderNr * (MovieTicket.GetPrice() + PremiumExtra) * 0.9;
+        return orderNr * (MovieTicket.GetPrice() + PremiumExtra);
     }
 
     public bool IsWeekend()
