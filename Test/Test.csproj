@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BiscoopApp\BioscoopApp.csproj" />
+    <ProjectReference Include="..\BiscoopApp\BioscoopApp - Strategy Pattern.csproj" />
   </ItemGroup>
 
 </Project>
