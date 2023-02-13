@@ -1,13 +1,12 @@
-﻿using BioscoopApp___State_Pattern.Domain.States;
+﻿using BioscoopApp___State_Pattern.States;
+using Domain.Models;
 using Domain.Strategies.Calculate;
 using Domain.Strategies.Export;
-using DomainServices.Domain.States;
 using DomainServices.Interfaces;
-using Newtonsoft.Json;
 
-namespace Domain.Models;
+namespace BioscoopApp___State_Pattern.Domain;
 
-public class OrderStatePattern 
+public class OrderStatePattern
 {
     public IState<OrderStatePattern> State { get; set; }
     public NoOrderState? NoOrderState { get; set; }
@@ -61,9 +60,9 @@ public class OrderStatePattern
         State.ReminderPayOrder();
     }
 
-    public void SendTicketsToCustumer()
+    public void SendTicketsToCostumer()
     {
-        State.SendTicketsToCustumer();
+        State.SendTicketsToCostumer();
     }
 
     public void SubmitOrder()

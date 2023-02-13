@@ -1,9 +1,9 @@
-﻿using Domain.Models;
+﻿using BioscoopApp___State_Pattern.Domain;
 using DomainServices.Interfaces;
 
-namespace BioscoopApp___State_Pattern.Domain.States;
+namespace BioscoopApp___State_Pattern.States;
 
-public class OrderCanceledState: IState<OrderStatePattern>
+public class OrderCanceledState : IState<OrderStatePattern>
 {
     private OrderStatePattern Order;
 
@@ -32,7 +32,7 @@ public class OrderCanceledState: IState<OrderStatePattern>
         Console.WriteLine("This order is canceled.");
     }
 
-    public void SendTicketsToCustumer()
+    public void SendTicketsToCostumer()
     {
         Console.WriteLine("This order is canceled.");
     }

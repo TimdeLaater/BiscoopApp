@@ -1,9 +1,9 @@
-﻿using Domain.Models;
+﻿using BioscoopApp___State_Pattern.Domain;
 using DomainServices.Interfaces;
 
-namespace BioscoopApp___State_Pattern.Domain.States;
+namespace BioscoopApp___State_Pattern.States;
 
-public class OrderFinishedState: IState<OrderStatePattern>
+public class OrderFinishedState : IState<OrderStatePattern>
 {
     private OrderStatePattern Order;
 
@@ -32,7 +32,7 @@ public class OrderFinishedState: IState<OrderStatePattern>
         Console.WriteLine("The order is already payed, enjoy the movie!");
     }
 
-    public void SendTicketsToCustumer()
+    public void SendTicketsToCostumer()
     {
         Console.WriteLine("The tickets will be send to your email, enjoy the movie!");
     }

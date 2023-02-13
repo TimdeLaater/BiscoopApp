@@ -1,11 +1,9 @@
-﻿using BioscoopApp___State_Pattern.Domain.States;
-using Domain.Models;
+﻿using BioscoopApp___State_Pattern.Domain;
 using DomainServices.Interfaces;
-using System.Xml.Xsl;
 
-namespace DomainServices.Domain.States;
+namespace BioscoopApp___State_Pattern.States;
 
-public class OrderReservedState: IState<OrderStatePattern>
+public class OrderReservedState : IState<OrderStatePattern>
 {
     private OrderStatePattern Order;
 
@@ -36,11 +34,11 @@ public class OrderReservedState: IState<OrderStatePattern>
     {
         var dateToday = DateTime.Now;
         var difference = dateToday - Order.MovieTicket?.MovieScreening.DateAndTime;
-        if (difference!.Value.TotalHours <= 12)
+        if (difference!.Value.TotalHours <= 24)
             Console.WriteLine("Please pay your order or else it will be canceled");
     }
 
-    public void SendTicketsToCustumer()
+    public void SendTicketsToCostumer()
     {
         Console.WriteLine("Order has not been payed yet.");
     }
@@ -52,7 +50,7 @@ public class OrderReservedState: IState<OrderStatePattern>
 
     public void UpdateOrder(OrderStatePattern order)
     {
-        SetContext(order);
+        Order.TransitionTo(new NoOrderState(order));
         Console.WriteLine("Order updated!");
     }
 

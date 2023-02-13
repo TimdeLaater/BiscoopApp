@@ -1,7 +1,7 @@
-﻿using Domain.Models;
+﻿using BioscoopApp___State_Pattern.Domain;
 using DomainServices.Interfaces;
 
-namespace BioscoopApp___State_Pattern.Domain.States;
+namespace BioscoopApp___State_Pattern.States;
 public class NoTicketsLeftState : IState<OrderStatePattern>
 {
     private OrderStatePattern Order;
@@ -30,7 +30,7 @@ public class NoTicketsLeftState : IState<OrderStatePattern>
         Console.WriteLine("No tickets left.");
     }
 
-    public void SendTicketsToCustumer()
+    public void SendTicketsToCostumer()
     {
         Console.WriteLine("No tickets left.");
     }

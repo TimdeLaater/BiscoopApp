@@ -8,7 +8,7 @@ public interface IState<T>
     public void UpdateOrder(T order);
     public void CancelOrder();
     public void ReminderPayOrder();
-    public void SendTicketsToCustumer();
+    public void SendTicketsToCostumer();
     public void SetContext(T context);
 }
 

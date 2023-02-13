@@ -1,8 +1,7 @@
-﻿using Domain.Models;
-using DomainServices.Domain.States;
+﻿using BioscoopApp___State_Pattern.Domain;
 using DomainServices.Interfaces;
 
-namespace BioscoopApp___State_Pattern.Domain.States;
+namespace BioscoopApp___State_Pattern.States;
 
 public class NoOrderState : IState<OrderStatePattern>
 
@@ -25,17 +24,17 @@ public class NoOrderState : IState<OrderStatePattern>
 
     public void PayOrder()
     {
-        Console.WriteLine("There is no order placed. Please place a order for futher steps.");
+        Console.WriteLine("There is no order placed. Please place a order for further steps.");
     }
 
     public void ReminderPayOrder()
     {
-        Console.WriteLine("There is no order placed. Please place a order for futher steps.");
+        Console.WriteLine("There is no order placed. Please place a order for further steps.");
     }
 
-    public void SendTicketsToCustumer()
+    public void SendTicketsToCostumer()
     {
-        Console.WriteLine("There is no order placed. Please place a order for futher steps.");
+        Console.WriteLine("There is no order placed. Please place a order for further steps.");
     }
 
     public void SubmitOrder()

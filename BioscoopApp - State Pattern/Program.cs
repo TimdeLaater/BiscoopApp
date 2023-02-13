@@ -1,4 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using BioscoopApp___State_Pattern.Domain;
 using Domain.Models;
 
 var movie = new Movie("Revenge of the Sith");
@@ -13,23 +14,24 @@ var order = new OrderStatePattern(8, false, movieTicket);
     order.PayOrder();
     order.CancelOrder();
     order.ReminderPayOrder();
-    order.SendTicketsToCustumer();
+    order.SendTicketsToCostumer();
     // Should proceed to next state: Order Reserved
     order.SubmitOrder();
 
 // Order Reserved State
     // Changes or canceling should be allowed on this state
     order.UpdateOrder(new OrderStatePattern(0, false, movieTicket));
+    order.SubmitOrder();
     // Enters order canceled  state
     order.CancelOrder();
 
 // Order Canceled State
 // No function should be allowed because order no longer exists
-   // order.UpdateOrder(new OrderStatePattern(0, false, movieTicket));
+    order.UpdateOrder(new OrderStatePattern(0, false, movieTicket));
     order.PayOrder();
     order.CancelOrder();
     order.ReminderPayOrder();
-    order.SendTicketsToCustumer();
+    order.SendTicketsToCostumer();
     order.SubmitOrder();
 
 // Order Reserved State
@@ -38,7 +40,7 @@ var order = new OrderStatePattern(8, false, movieTicket);
     // Advance to Order Reserved 
     order.SubmitOrder();
     // As the order is not payed yet, those function should not be allowed
-    order.SendTicketsToCustumer();
+    order.SendTicketsToCostumer();
     // If the day of today is < 24h of the screening time, should send a reminder to customer 
     order.ReminderPayOrder();
     // Enters Order Finished State
@@ -50,5 +52,5 @@ var order = new OrderStatePattern(8, false, movieTicket);
     order.PayOrder();
     order.CancelOrder();
     order.ReminderPayOrder();
-    order.SendTicketsToCustumer();
+    order.SendTicketsToCostumer();
     order.SubmitOrder();
