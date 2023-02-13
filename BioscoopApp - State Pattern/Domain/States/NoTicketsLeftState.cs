@@ -1,16 +1,22 @@
-﻿using BioscoopApp___State_Pattern.Interfaces;
+﻿using Domain.Models;
+using DomainServices.Interfaces;
+
 namespace BioscoopApp___State_Pattern.Domain.States;
-public class NoTicketsLeftState : IState
+public class NoTicketsLeftState : IState<OrderStatePattern>
 {
-    public NoTicketsLeftState(BioscoopApp.Domain.Order order) { }
+    private OrderStatePattern Order;
+    public NoTicketsLeftState(OrderStatePattern order)
+    {
+        Order = order;
+    }
     public void CancelOrder()
     {
         Console.WriteLine("No order was placed. Canceling is not possible.");
     }
 
-    public void CompleteOrder()
+    public void PayOrder()
     {
-        Console.WriteLine("No order was placed.");
+        Console.WriteLine("No tickets left.");
     }
 
     public bool HasTicketsLeft()
@@ -21,27 +27,26 @@ public class NoTicketsLeftState : IState
 
     public void ReminderPayOrder()
     {
-        throw new NotImplementedException();
+        Console.WriteLine("No tickets left.");
     }
 
     public void SendTicketsToCustumer()
     {
-        throw new NotImplementedException();
-    }
-
-    public void StoreOrder()
-    {
-        throw new NotImplementedException();
+        Console.WriteLine("No tickets left.");
     }
 
     public void SubmitOrder()
     {
-        throw new NotImplementedException();
+        Console.WriteLine("No tickets left.");
     }
 
-    public void UpdateOrder()
+    public void UpdateOrder(OrderStatePattern order)
     {
-        throw new NotImplementedException();
+        Console.WriteLine("No tickets left.");
+    }
+    public void SetContext(OrderStatePattern order)
+    {
+        Order = order;
     }
 }
 

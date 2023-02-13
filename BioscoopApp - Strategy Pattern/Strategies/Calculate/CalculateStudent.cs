@@ -1,10 +1,11 @@
-﻿using BioscoopApp.Interfaces;
+﻿using Domain.Models;
+using DomainServices.Interfaces;
 
-namespace BioscoopApp.Domain.Calculate;
+namespace Strategies.Calculate;
 
 public class CalculateStudent : ICalculate
 {
-    private int PremiumExtra { get; } 
+    private int PremiumExtra { get; }
     private MovieTicket MovieTicket { get; }
     public CalculateStudent(MovieTicket movieTicket)
     {

@@ -1,4 +1,4 @@
-﻿namespace BioscoopApp.Interfaces;
+﻿namespace DomainServices.Interfaces;
 
 public interface IExport
 {

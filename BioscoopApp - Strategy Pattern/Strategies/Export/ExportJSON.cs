@@ -1,8 +1,8 @@
-﻿using BioscoopApp.Interfaces;
-using System.Text.Json.Nodes;
+﻿using System.Text.Json.Nodes;
 using System.Text.Json;
+using DomainServices.Interfaces;
 
-namespace BioscoopApp.Domain.Export;
+namespace Strategies.Export;
 
 public class ExportJson : IExport
 {
@@ -26,6 +26,7 @@ public class ExportJson : IExport
         };
 
         array!.Add(itemToAdd);
+
         var jsonAdd = JsonSerializer.Serialize(array);
         File.WriteAllText(path, jsonAdd);
     }
