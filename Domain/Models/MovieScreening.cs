@@ -1,32 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace Domain.Models;
 
-namespace BiscoopApp.Domain
+public class MovieScreening
 {
-    public class MovieScreening
+    public List<MovieTicket> TicketsOrdered { get; }
+    public DateTime DateAndTime { get; }
+    private double PricePerSeat { get; }
+    private Movie Movie { get; }
+    public int MaxSeats { get; }
+    public MovieScreening(Movie movie, DateTime dateAndTime, double pricePerSeat, int maxSeats)
     {
-        public List<MovieTicket> TicketsOrdered { get; set; }
-        public DateTime DateAndTime { get; set; }
-        private double PricePerSeat { get; set; }
-        private Movie Movie { get; }
-        public MovieScreening(Movie Movie, DateTime DateAndTime, double PricePerSeat)
-        {
-            this.Movie = Movie;
-            this.DateAndTime = DateAndTime;
-            this.PricePerSeat = PricePerSeat;
-            TicketsOrdered = new List<MovieTicket>();
-        }
-        public double GetPricePerSeat()
-        {
-            return PricePerSeat;
-        }
+        Movie = movie;
+        DateAndTime = dateAndTime;
+        PricePerSeat = pricePerSeat;
+        TicketsOrdered = new List<MovieTicket>();
+        MaxSeats = maxSeats;
+    }
+    public double GetPricePerSeat()
+    {
+        return PricePerSeat;
+    }
 
-        public override string? ToString()
-        {
-            return $"{Movie.Title}, screening at: {DateAndTime}. Get Your tickets today for €{PricePerSeat}";
-        }
+    public override string ToString()
+    {
+        return $"{Movie.Title}, screening at: {DateAndTime}. Get Your tickets today for €{PricePerSeat}";
     }
 }

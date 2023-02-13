@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace Domain.Models;
 
-namespace BiscoopApp.Domain
+public enum TicketExportFormat
 {
-    public enum TicketExportFormat
-    {
-        JSON,
-        PLAINTEXT
-    }
+    Json,
+    PlainText
 }

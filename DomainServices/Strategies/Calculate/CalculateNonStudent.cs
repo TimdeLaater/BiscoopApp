@@ -1,7 +1,7 @@
-﻿using BioscoopApp.Domain;
-using BioscoopApp.Interfaces;
+﻿using Domain.Models;
+using DomainServices.Interfaces;
 
-namespace BioscoopApp.Domain.Calculate;
+namespace Domain.Strategies.Calculate;
 
 public class CalculateNonStudent : ICalculate
 {

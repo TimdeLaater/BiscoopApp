@@ -1,6 +1,6 @@
-﻿using BioscoopApp.Interfaces;
+﻿using DomainServices.Interfaces;
 
-namespace BioscoopApp.Domain.Export;
+namespace Domain.Strategies.Export;
 
 public class ExportPlainText : IExport
 {

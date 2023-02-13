@@ -3,9 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BioscoopApp", "BiscoopApp\BioscoopApp.csproj", "{B2D2EF90-CEA3-4130-B6C2-31D6E9382CE3}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test", "Test\Test.csproj", "{A1CC19D1-4486-4CAB-98EC-25AF76AC5FBC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BioscoopApp - State Pattern", "BioscoopApp - State Pattern\BioscoopApp - State Pattern.csproj", "{53AAAEDC-4A33-43D0-8783-D5FA46A0C443}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BioscoopApp - Strategy Pattern", "BioscoopApp - Strategy Pattern\BioscoopApp - Strategy Pattern.csproj", "{4A18284A-69D1-429B-BF8E-E8D0106C185E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{AFCABE16-2D4A-4DC7-8E88-BD5C15D45A5B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainServices", "DomainServices\DomainServices.csproj", "{60514297-2D8E-4342-B854-0B3FCA94407B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +19,26 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B2D2EF90-CEA3-4130-B6C2-31D6E9382CE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B2D2EF90-CEA3-4130-B6C2-31D6E9382CE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B2D2EF90-CEA3-4130-B6C2-31D6E9382CE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B2D2EF90-CEA3-4130-B6C2-31D6E9382CE3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A1CC19D1-4486-4CAB-98EC-25AF76AC5FBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A1CC19D1-4486-4CAB-98EC-25AF76AC5FBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A1CC19D1-4486-4CAB-98EC-25AF76AC5FBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A1CC19D1-4486-4CAB-98EC-25AF76AC5FBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53AAAEDC-4A33-43D0-8783-D5FA46A0C443}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53AAAEDC-4A33-43D0-8783-D5FA46A0C443}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53AAAEDC-4A33-43D0-8783-D5FA46A0C443}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53AAAEDC-4A33-43D0-8783-D5FA46A0C443}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A18284A-69D1-429B-BF8E-E8D0106C185E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A18284A-69D1-429B-BF8E-E8D0106C185E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A18284A-69D1-429B-BF8E-E8D0106C185E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A18284A-69D1-429B-BF8E-E8D0106C185E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFCABE16-2D4A-4DC7-8E88-BD5C15D45A5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFCABE16-2D4A-4DC7-8E88-BD5C15D45A5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFCABE16-2D4A-4DC7-8E88-BD5C15D45A5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFCABE16-2D4A-4DC7-8E88-BD5C15D45A5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60514297-2D8E-4342-B854-0B3FCA94407B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60514297-2D8E-4342-B854-0B3FCA94407B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60514297-2D8E-4342-B854-0B3FCA94407B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60514297-2D8E-4342-B854-0B3FCA94407B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

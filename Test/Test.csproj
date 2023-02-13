@@ -22,7 +22,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BiscoopApp\BioscoopApp.csproj" />
+    <ProjectReference Include="..\BioscoopApp - Strategy Pattern\BioscoopApp - Strategy Pattern.csproj" />
+    <ProjectReference Include="..\Domain\Domain.csproj" />
   </ItemGroup>
 
 </Project>
