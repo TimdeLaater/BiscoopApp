@@ -9,9 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BioscoopApp - State Pattern
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BioscoopApp - Strategy Pattern", "BioscoopApp - Strategy Pattern\BioscoopApp - Strategy Pattern.csproj", "{4A18284A-69D1-429B-BF8E-E8D0106C185E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{AFCABE16-2D4A-4DC7-8E88-BD5C15D45A5B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{AFCABE16-2D4A-4DC7-8E88-BD5C15D45A5B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainServices", "DomainServices\DomainServices.csproj", "{60514297-2D8E-4342-B854-0B3FCA94407B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DomainServices", "DomainServices\DomainServices.csproj", "{60514297-2D8E-4342-B854-0B3FCA94407B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BioscoopApp - Observer Pattern", "BioscoopApp - Observer Pattern\BioscoopApp - Observer Pattern.csproj", "{4299390F-0502-40EC-BEF0-E7D1F5B0BED1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{60514297-2D8E-4342-B854-0B3FCA94407B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{60514297-2D8E-4342-B854-0B3FCA94407B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{60514297-2D8E-4342-B854-0B3FCA94407B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4299390F-0502-40EC-BEF0-E7D1F5B0BED1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4299390F-0502-40EC-BEF0-E7D1F5B0BED1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4299390F-0502-40EC-BEF0-E7D1F5B0BED1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4299390F-0502-40EC-BEF0-E7D1F5B0BED1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

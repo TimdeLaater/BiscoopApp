@@ -26,7 +26,7 @@ var order = new OrderStatePattern(8, false, movieTicket);
     order.CancelOrder();
 
 // Order Canceled State
-// No function should be allowed because order no longer exists
+    // No function should be allowed because order no longer exists
     order.UpdateOrder(new OrderStatePattern(0, false, movieTicket));
     order.PayOrder();
     order.CancelOrder();
@@ -35,7 +35,7 @@ var order = new OrderStatePattern(8, false, movieTicket);
     order.SubmitOrder();
 
 // Order Reserved State
-// New order because previous was canceled :P
+    // New order because previous was canceled :P
     order = new OrderStatePattern(0, false, movieTicket);
     // Advance to Order Reserved 
     order.SubmitOrder();
@@ -47,7 +47,7 @@ var order = new OrderStatePattern(8, false, movieTicket);
     order.PayOrder();
 
 // Order Finished State
-// No actions remain to the stages, so all functions will log a message of conclusion
+    // No actions remain to the stages, so all functions will log a message of conclusion
     order.UpdateOrder(new OrderStatePattern(0, false, movieTicket));
     order.PayOrder();
     order.CancelOrder();

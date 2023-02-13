@@ -9,8 +9,6 @@ namespace BioscoopApp___State_Pattern.Domain;
 public class OrderStatePattern
 {
     public IState<OrderStatePattern> State { get; set; }
-    public NoOrderState? NoOrderState { get; set; }
-    public NoTicketsLeftState? NoTicketsLeftState { get; set; }
     private int Id { get; set; }
     private int OrderNr { get; }
     public bool Payed { get; set; } = false;

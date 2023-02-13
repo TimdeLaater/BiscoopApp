@@ -5,11 +5,11 @@ namespace BioscoopApp___State_Pattern.States;
 
 public class OrderFinishedState : IState<OrderStatePattern>
 {
-    private OrderStatePattern Order;
+    private OrderStatePattern _order;
 
     public OrderFinishedState(OrderStatePattern order)
     {
-        Order = order;
+        _order = order;
     }
 
     public void CancelOrder()
@@ -19,7 +19,7 @@ public class OrderFinishedState : IState<OrderStatePattern>
 
     public bool HasTicketsLeft()
     {
-        return Order.MovieTicket?.MovieScreening.TicketsOrdered.Count > 0;
+        return _order.MovieTicket?.MovieScreening.TicketsOrdered.Count > 0;
     }
 
     public void PayOrder()
@@ -47,7 +47,7 @@ public class OrderFinishedState : IState<OrderStatePattern>
     }
     public void SetContext(OrderStatePattern order)
     {
-        Order = order;
+        _order = order;
     }
 }
 
